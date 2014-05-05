@@ -1,0 +1,75 @@
+<h1 class="page-header">Create new recipe</h1>
+
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+        <label for="title" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" placeholder="Name" ng-model="recipe.name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="description" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="description" placeholder="short description" ng-model="recipe.description">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="instructions" class="col-sm-2 control-label">Ingredients</label>
+
+        <div class="col-sm-10">
+            <div class="container-fluid" style="padding-left: 0px">
+                <div class="row form-group">
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" id="ingredient-name" placeholder="Mehl" ng-model="newIngredient.name">
+                    </div>
+                    <div class="col-xs-2">
+                        <input type="number" class="form-control" id="ingredient-amount" placeholder="200" ng-model="newIngredient.amount">
+                    </div>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control" id="ingredient-unit" placeholder="kg" ng-model="newIngredient.unit" list="units">
+                        <datalist id="units">
+                            <option ng-repeat="u in units" value="{{u.value}}" label="{{u.label}}"/>
+                        </datalist>
+                    </div>
+                    <div class="col-xs-1 ">
+                        <button ng-click="addIngredient()" class="btn btn-default">add</button>
+                    </div>
+                </div>
+                <hr/>
+
+                <div class="row form-group" ng-repeat="ing in recipe.ingredients">
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" id="name" ng-model="ing.name">
+                    </div>
+                    <div class="col-xs-2">
+                        <input type="number" class="form-control" id="amount" ng-model="ing.amount">
+                    </div>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control" id="unit" list="units" ng-model="ing.unit" list="units">
+                    </div>
+                    <div class="col-xs-1">
+                        <button type="button" ng-click="removeIngredient(ing)" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="instructions" class="col-sm-2 control-label">Instructions</label>
+
+        <div class="col-sm-10">
+            <textarea type="password" class="form-control" id="instructions" placeholder="Man nehme.." ng-model="recipe.instructions" rows="10" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" ng-click="saveRecipe()">Save</button>
+        </div>
+    </div>
+</form>
+
+

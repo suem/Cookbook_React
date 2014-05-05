@@ -1,0 +1,44 @@
+<h1 class="page-header">
+    {{recipe.name}}<br/>
+    <small>{{recipe.description}}</small>
+</h1>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Ingredients</h3>
+                </div>
+                <div class="panel-body" style="padding-left: 0px;">
+                    <ul>
+                        <li ng-repeat="i in recipe.ingredients">{{i.name}}, {{i.amount}} {{i.unit}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 text-justify">
+            <h3 style="margin-top: 0px">Instructions</h3>
+            {{recipe.instructions}}
+        </div>
+    </div>
+
+</div>
+
+<div class="container-fluid" style="margin-top: 30px;">
+            <span class="pull-left">
+                <a class="btn btn-default">
+                    <span class="glyphicon glyphicon-print"></span> Print
+                </a>
+            </span>
+            <span class="pull-right">
+                <a href="#recipes/{{r.id}}" class="btn btn-warning">
+                    Edit
+                </a>
+                <a href="#recipes/{{r.id}}" class="btn btn-danger">
+                    Delete
+                </a>
+            </span>
+</div>
+

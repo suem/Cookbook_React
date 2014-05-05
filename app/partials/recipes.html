@@ -1,0 +1,17 @@
+<h1 class="page-header">Recipes</h1>
+
+<div class="panel panel-default" ng-repeat="r in recipes">
+    <div class="panel-heading" >
+        <div class="row" style="padding-right: 5px; ">
+            <h3 class="panel-title col-xs-8">
+                {{r.name}}
+            </h3>
+            <div class="col-xs-4 text-right">
+                <a href="#recipes/{{r.id}}" class="btn btn-primary btn-sm">View </a>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        {{r.description}}
+    </div>
+</div>
