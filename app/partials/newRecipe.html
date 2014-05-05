@@ -20,7 +20,10 @@
             <div class="container-fluid" style="padding-left: 0px">
                 <div class="row form-group">
                     <div class="col-xs-7">
-                        <input type="text" class="form-control" id="ingredient-name" placeholder="Mehl" ng-model="newIngredient.name">
+                        <input type="text" class="form-control" id="ingredient-name" placeholder="Mehl" ng-model="newIngredient.name" list="ingredients">
+                        <datalist id="ingredients">
+                            <option ng-repeat="i in availableIngredients" value="{{i}}"/>
+                        </datalist>
                     </div>
                     <div class="col-xs-2">
                         <input type="number" class="form-control" id="ingredient-amount" placeholder="200" ng-model="newIngredient.amount">
@@ -28,7 +31,7 @@
                     <div class="col-xs-2">
                         <input type="text" class="form-control" id="ingredient-unit" placeholder="kg" ng-model="newIngredient.unit" list="units">
                         <datalist id="units">
-                            <option ng-repeat="u in units" value="{{u.value}}" label="{{u.label}}"/>
+                            <option ng-repeat="u in availableUnits" value="{{u}}"/>
                         </datalist>
                     </div>
                     <div class="col-xs-1 ">
@@ -71,5 +74,7 @@
         </div>
     </div>
 </form>
+
+{{recipe}}
 
 

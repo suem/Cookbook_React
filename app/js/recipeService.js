@@ -31,14 +31,24 @@ recipeService.factory('recipes', ['$http',function ($http) {
     };
 
     var recipes = {};
-    recipes.saveRecipe = function(r) {
-        var id  = getNewId(r.name);
-        r.id = id;
-        data[id] = r;
-        $http.post('/store', r).success(function(){
-            console.log('sent new recipe');
-        });
-        return id;
+    recipes.saveRecipe = function(r,callback) {
+        if(!r.id) {
+            //new recipe
+            var id  = getNewId(r.name);
+            console.log('New Recipe: '+id);
+            r.id = id;
+            data[id] = r;
+            $http.post('/store', r).success(function(){
+                console.log('sent new recipe');
+            });
+        } else {
+            console.log('update recipe: '+ r.id)
+            data[r.id] = r;
+            $http.post('/store', r).success(function(){
+                console.log('sent new recipe');
+            });
+        }
+        callback(null,r);
     }
 
     recipes.findAll = function (callback) {

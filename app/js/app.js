@@ -15,6 +15,10 @@ cookbook.config(['$routeProvider', function ($routeProvider) {
         templateUrl: 'partials/recipeDetail.html',
         controller: 'RecipeDetail'
     });
+    $routeProvider.when('/editrecipe/:recipeId', {
+        templateUrl: 'partials/newRecipe.html',
+        controller: 'RecipeNew'
+    });
     $routeProvider.when('/newrecipe', {
         templateUrl: 'partials/newRecipe.html',
         controller: 'RecipeNew'
