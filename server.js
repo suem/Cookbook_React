@@ -7,6 +7,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fs = require('fs');
+//var TopCube = require('topcube');
 var database = require('./database.js');
 var app = express();
 
@@ -34,8 +35,22 @@ app.get('/data', function (req, res) {
 app.post('/store', function (request, response) {
     var newRecipe = request.body;
     database.storeRecipe(newRecipe);
+    response.send({status:"oke"})
+});
+
+app.post('/remove', function (request, response) {
+    var recipe = request.body;
+    database.removeRecipe(recipe);
+    response.send({status:"oke"})
 });
 
 app.listen(8080, function () {
     console.log("Listening on port 8080...");
 });
+
+//TopCube({
+//  url: 'http://localhost:8080',
+//  name: 'My webapp',
+//  width: 800,
+//  height: 600
+//});

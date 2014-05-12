@@ -1,0 +1,28 @@
+{
+    "name": "Wähenguss",
+    "ingredients": [
+        {
+            "name": "Ei",
+            "amount": 3,
+            "unit": "Stk."
+        },
+        {
+            "name": "Zucker",
+            "amount": 2,
+            "unit": "EL"
+        },
+        {
+            "name": "Rahm",
+            "amount": 2,
+            "unit": "dl"
+        },
+        {
+            "name": "Vanillezucker",
+            "amount": 1,
+            "unit": "Sachet"
+        }
+    ],
+    "description": "Guss für standard Wähe",
+    "instructions": "Alles gut mischen. Ca. 35min bei 200C baken",
+    "id": "w_henguss_gvfv42t9"
+}

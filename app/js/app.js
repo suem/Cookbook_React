@@ -2,6 +2,7 @@
 
 var cookbook = angular.module('cookbook', [
     'ngRoute',
+    'ui.bootstrap',
     'cookbook.recipes',
     'cookbook.controllers'
 ]);

@@ -1,0 +1,36 @@
+{
+    "name": "Verbrannte Rüebli",
+    "ingredients": [
+        {
+            "name": "Sämi",
+            "amount": 1,
+            "unit": "Awesome"
+        },
+        {
+            "name": "Rüebli",
+            "amount": 4,
+            "unit": "Stk."
+        },
+        {
+            "name": "Boullion",
+            "amount": 1,
+            "unit": "KL"
+        },
+        {
+            "name": "Pfanne",
+            "amount": 1,
+            "unit": "Stk."
+        },
+        {
+            "name": {
+                "name": "Mehl",
+                "unit": "g"
+            },
+            "amount": 200,
+            "unit": "EL"
+        }
+    ],
+    "description": "Sam arbeitet an Kochbuch",
+    "instructions": "Man kocht die Rüebli und hört nicht auf sie zu kochen.",
+    "id": "verbrannte_r_ebli_ygt1q0k9"
+}
